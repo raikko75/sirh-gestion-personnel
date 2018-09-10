@@ -1,18 +1,30 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
-<web-app>
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5"
+   xmlns="http://java.sun.com/xml/ns/javaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <display-name>sgp</display-name>
   <servlet>
+  
   	<servlet-name>ListerCollaborateursController</servlet-name>
   	<servlet-class>dev.sgp.web.ListerCollaborateursController</servlet-class>	
   </servlet>
+  
   <servlet>
+  
   	<servlet-name>EditerCollaborateurController</servlet-name>
   	<servlet-class>dev.sgp.web.EditerCollaborateurController</servlet-class>
 
   </servlet>
+  
+    <servlet>
+    
+  	<servlet-name>NewCollaborateursController</servlet-name>
+  	<servlet-class>dev.sgp.web.NewCollaborateurController</servlet-class>
+  		
+  </servlet>
+  
+  
   <servlet-mapping>
   	<servlet-name>ListerCollaborateursController</servlet-name>
   	<url-pattern>/collaborateurs/lister</url-pattern>
@@ -21,5 +33,8 @@
   	<servlet-name>EditerCollaborateurController</servlet-name>
   	<url-pattern>/collaborateurs/Editer</url-pattern>
   </servlet-mapping>
-  
+    <servlet-mapping>
+  	<servlet-name>NewCollaborateursController</servlet-name>
+  	<url-pattern>/collaborateurs/newCollaborateur</url-pattern>
+  </servlet-mapping>
 </web-app>
