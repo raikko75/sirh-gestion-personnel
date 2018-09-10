@@ -13,17 +13,25 @@
 </head>
 <body>
 	<h1>les collaboooss</h1>
-
 	<div class=container>
 		<form method="post" action="lister">
-		
-		<c:set var="listCollaborateurs" scope="application" value="${ request.getAttribute('ListeCollaborateur')}" />
-			<c:forEach items="${ listCollaborateurs }" var="collabo">
-				<p>	
-								
-					<c:out value="${ listCollaborateurs.nom}" />					
-				</p>
-			</c:forEach>
+		<c:forEach var="entry" items="${requestScope.ListeCollaborateur}">
+				<div class="card float-left mr-5" style="width: 18rem;">
+					<img class="card-img-top"
+						src="/sirh-getion-personnel/asset/raikko.jpg" alt="Card image cap">
+					<div class="card-body p-2">
+						<h5 class="card-title p-0 m-0">
+					
+			
+							Nom : ${entry.nom}<br />
+							<p class="card-text p-0 m-0">
+								Prenom : ${entry.prenom}<br /> ${entry.adresse}<p class="card-text p-0 m-0"><br />	
+							<p class="card-text p-0 m-0">
+			
+								${entry.numeroSecuriteSocial}<br />
+			
+							</c:forEach>
+	<%--
 			<%
 				List<Collaborateur> listCollaborateurs = (List<Collaborateur>) request.getAttribute("ListeCollaborateur");
 
@@ -49,10 +57,8 @@
 			<%
 				}
 			%>
-
-
+--%>
 		</form>
-
 	</div>
 	<%-- liste les noms de collaborateurs  --%>
 
